@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.fms.workshopmongo.domain.User;
 import com.fms.workshopmongo.dto.UserDTO;
-import com.fms.workshopmongo.repositories.UserRepository;
+import com.fms.workshopmongo.repository.UserRepository;
 import com.fms.workshopmongo.service.exception.ObjectNotFoundException;
 
 @Service
