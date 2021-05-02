@@ -1,12 +1,15 @@
 package com.fms.workshopmongo.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fms.workshopmongo.dto.AuthorDTO;
+import com.fms.workshopmongo.dto.CommentDTO;
 
 @Document
 public class Post implements Serializable {
@@ -18,6 +21,8 @@ public class Post implements Serializable {
 	private String tittle;
 	private String body;
 	private AuthorDTO author;
+
+	private List<CommentDTO> comments = new ArrayList<>();
 
 	public Post() {
 	}
@@ -77,6 +82,14 @@ public class Post implements Serializable {
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
+	}
+
+	public List<CommentDTO> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<CommentDTO> comments) {
+		this.comments = comments;
 	}
 
 	@Override
